@@ -1,4 +1,4 @@
-package com.apollo.Todos.todo;
+package com.apollo.Todos.domain;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -12,7 +12,7 @@ import java.time.LocalDate;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name="todoapp")
+//@Table(name="todoapp")
 public class Todo {
 
     @Id
