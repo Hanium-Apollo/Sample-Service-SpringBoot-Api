@@ -1,5 +1,6 @@
-package com.apollo.Todos.todo;
+package com.apollo.Todos.repository;
 
+import com.apollo.Todos.domain.Todo;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

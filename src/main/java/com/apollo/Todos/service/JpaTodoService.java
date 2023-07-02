@@ -1,7 +1,8 @@
-package com.apollo.Todos.todo;
+package com.apollo.Todos.service;
 
+import com.apollo.Todos.repository.JpaTodoRepository;
+import com.apollo.Todos.domain.Todo;
 import lombok.AllArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;

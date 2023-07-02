@@ -1,13 +1,18 @@
-package com.apollo.Todos.jwt;
+package com.apollo.Todos.controller;
 
+import com.apollo.Todos.dto.JwtTokenRequest;
+import com.apollo.Todos.dto.JwtTokenResponse;
+import com.apollo.Todos.service.JwtTokenService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
+@RequestMapping("/api")
 public class JwtAuthenticationController {
 
     private final JwtTokenService tokenService;

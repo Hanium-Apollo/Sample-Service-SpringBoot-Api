@@ -1,4 +1,4 @@
-package com.apollo.Todos.jwt;
+package com.apollo.Todos.config;
 
 import java.security.KeyPair;
 import java.security.KeyPairGenerator;
@@ -47,7 +47,7 @@ public class JwtSecurityConfig {
         // h2-console is a servlet
         return httpSecurity
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/authenticate").permitAll()
+                        .requestMatchers("/api/authenticate").permitAll()
                         .requestMatchers(HttpMethod.OPTIONS,"/**")
                         .permitAll()
                         .anyRequest()

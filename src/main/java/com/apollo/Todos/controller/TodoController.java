@@ -1,37 +1,40 @@
-package com.apollo.Todos.todo;
+package com.apollo.Todos.controller;
 
+import com.apollo.Todos.domain.Todo;
+import com.apollo.Todos.service.JpaTodoService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
-public class TodoResource {
+@RequestMapping("/api/users")
+public class TodoController {
 
-    private JpaTodoService todoService;
+    private final JpaTodoService todoService;
 
-    public TodoResource(JpaTodoService todoService) {
+    public TodoController(JpaTodoService todoService) {
         this.todoService = todoService;
     }
-    @GetMapping("/users/{username}/todos")
+    @GetMapping("/{username}/todos")
     public List<Todo> retrieveTodos(@PathVariable String username) {
         return todoService.findByUsername(username);
     }
 
-    @GetMapping("/users/{username}/todos/{id}")
+    @GetMapping("/{username}/todos/{id}")
     public Todo retrieveTodo(@PathVariable String username,
                                    @PathVariable Long id) {
         return todoService.findById(id);
     }
 
-    @DeleteMapping("/users/{username}/todos/{id}")
+    @DeleteMapping("/{username}/todos/{id}")
     public ResponseEntity<Void> deleteTodo(@PathVariable String username,
                                        @PathVariable Long id) {
         todoService.deleteById(id);
         return ResponseEntity.noContent().build();
     }
 
-    @PutMapping("/users/{username}/todos/{id}")
+    @PutMapping("/{username}/todos/{id}")
     public Todo updateTodo(@PathVariable String username,
                                            @PathVariable Long id,
                                            @RequestBody Todo todo) {
@@ -39,7 +42,7 @@ public class TodoResource {
         return todo;
     }
 
-    @PostMapping("/users/{username}/todos")
+    @PostMapping("/{username}/todos")
     public Todo createTodo(@PathVariable String username,
                            @RequestBody Todo todo) {
         Todo createdTodo = todoService.addTodo(username, todo.getDescription(), todo.getTargetDate(), todo.isDone());
