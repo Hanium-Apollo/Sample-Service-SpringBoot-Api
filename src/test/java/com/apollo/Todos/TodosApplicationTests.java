@@ -1,10 +1,10 @@
-package com.apollo.Todos;
+package com.Apollo.ToDos;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class TodosApplicationTests {
+class ToDosApplicationTests {
 
 	@Test
 	void contextLoads() {
