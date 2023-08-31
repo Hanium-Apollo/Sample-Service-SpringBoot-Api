@@ -33,7 +33,7 @@ public class ScheduleService {
         return new PatchScheduleResponse("Schedule is updated successfully");
     }
     @Transactional
-    DeleteScheduleResponse deleteSchedule(Long scheduleId){
+    public DeleteScheduleResponse deleteSchedule(Long scheduleId){
         Schedule schedule = scheduleRepository.findById(scheduleId)
                 .orElseThrow(() -> new RuntimeException("스케쥴 아이디 이상함"));
         scheduleRepository.delete(schedule);
