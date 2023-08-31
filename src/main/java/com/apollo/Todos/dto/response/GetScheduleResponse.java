@@ -8,4 +8,8 @@ import java.util.List;
 @Data
 public class GetScheduleResponse {
     private List<Schedule> schedules;
+
+    public GetScheduleResponse(List<Schedule> schedules) {
+        this.schedules = schedules;
+    }
 }
