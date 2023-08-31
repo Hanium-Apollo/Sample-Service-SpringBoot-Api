@@ -6,14 +6,22 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 @Entity
 @Getter
-@AllArgsConstructor
+@NoArgsConstructor
 public class Schedule {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String content;
-    protected Schedule(){}
+
+    public Schedule(String content) {
+        this.content = content;
+    }
+    public Schedule updateSchedule(String content){
+        this.content = content;
+        return this;
+    }
 }
